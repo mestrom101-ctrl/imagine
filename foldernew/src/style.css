@@ -101,7 +101,7 @@
   color: #2563eb;
   border: none;
   border-radius: 16px;
-  padding: 4px 4px;
+  padding: 4px 1px;
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
@@ -110,7 +110,7 @@
   margin-bottom: 0px;
   margin-right: 0px;
   box-shadow: none;
-  min-width: 56px;
+  min-width: 40px;
 }
 
 .schedule-btn.selected,
