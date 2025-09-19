@@ -743,7 +743,7 @@
                 if (this.style.background === 'rgb(58, 90, 197)' || this.style.background === '#3A5AC5') {
                     document.getElementById('main-page').classList.add('hidden');
                     // Dynamically load second-page.html
-                    fetch('second-page.html')
+                    fetch('srcc/second-page.html')
                         .then(response => response.text())
                         .then(html => {
                             document.getElementById('second-page-container').innerHTML = html;
