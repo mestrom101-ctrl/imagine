@@ -43,7 +43,13 @@ function showProtocolMessage(found: boolean) {
     `;
   } else {
     protocolMsg.innerHTML = `
-      <span class="protocol-icon" style="display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:#dc3545; color:white; font-weight:bold; font-size:12px;">!</span>
+      <span class="protocol-icon" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3L22 21H2L12 3Z" stroke="#dc3545" stroke-width="2.5" fill="none"/>
+          <circle cx="12" cy="16.5" r="1.5" fill="#dc3545"/>
+          <rect x="11" y="9" width="2" height="5" rx="1" fill="#dc3545"/>
+        </svg>
+      </span>
       <span style="color:#dc3545; font-weight:600;">Protocol not found</span>
     `;
   }
