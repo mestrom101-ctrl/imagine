@@ -660,7 +660,7 @@
     </main>
 
     <main class="main-content hidden" id="second-page">
-        <div class="progress-bar" style="margin: 0 0 32px 0; justify-content: flex-start;">
+        <div class="progress-bar" style="margin: 0 0 32px 0;">
             <div class="step completed">✓</div>
             <div class="step completed">✓</div>
             <div class="step completed">3</div>
@@ -668,113 +668,60 @@
             <div class="step pending">5</div>
             <div class="step pending">6</div>
         </div>
-        <div class="container">
-            <div class="appointment-scheduler">
-                <div class="grid-container">
-                    <!-- Left Column - Calendar -->
-                    <div class="left-column">
-                        <h2>Choose the day</h2>
-                        <p class="subtitle">You are seeing the availability based on<br>the chosen day</p>
-                        <div class="calendar-header">
-                            <div class="month-year">
-                                <span>SEPT 2025</span>
-                                <i class="fas fa-chevron-down dropdown-arrow"></i>
-                            </div>
-                            <div class="nav-buttons">
-                                <button class="nav-btn"><i class="fas fa-chevron-left"></i></button>
-                                <button class="nav-btn"><i class="fas fa-chevron-right"></i></button>
-                            </div>
+        <div style="background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 36px 32px 32px 32px; max-width: 900px; margin: 0 auto;">
+            <div style="display: flex; flex-direction: row; gap: 48px; align-items: flex-start;">
+                <!-- Calendar Card -->
+                <div style="flex: 1; min-width: 320px;">
+                    <h2 style="color: #2563eb; font-size: 22px; font-weight: 700; margin-bottom: 8px;">Choose the day</h2>
+                    <div style="color: #4b5563; margin-bottom: 18px; font-size: 15px;">You are seeing the availability based on the chosen day</div>
+                    <div style="background: #fff; border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,0.06); padding: 18px 18px 10px 18px; width: 100%; max-width: 320px; margin-bottom: 8px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="font-weight: 600; color: #222; font-size: 15px;">SEPT 2025</span>
+                            <span style="font-size: 18px; color: #888; cursor: pointer;">&#8594;</span>
                         </div>
-                        <div class="week-days">
-                            <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
-                        </div>
-                        <div class="calendar-grid">
-                            <div class="calendar-row">
-                                <div class="calendar-day inactive"></div>
-                                <div class="calendar-day inactive">1</div>
-                                <div class="calendar-day inactive">2</div>
-                                <div class="calendar-day inactive">3</div>
-                                <div class="calendar-day inactive">4</div>
-                                <div class="calendar-day inactive">5</div>
-                                <div class="calendar-day inactive">6</div>
-                            </div>
-                            <div class="calendar-row">
-                                <div class="calendar-day inactive">7</div>
-                                <div class="calendar-day inactive">8</div>
-                                <div class="calendar-day inactive">9</div>
-                                <div class="calendar-day inactive">10</div>
-                                <div class="calendar-day inactive">11</div>
-                                <div class="calendar-day inactive">12</div>
-                                <div class="calendar-day inactive">13</div>
-                            </div>
-                            <div class="calendar-row">
-                                <div class="calendar-day inactive">14</div>
-                                <div class="calendar-day inactive">15</div>
-                                <div class="calendar-day inactive">16</div>
-                                <div class="calendar-day selected">17</div>
-                                <div class="calendar-day inactive">18</div>
-                                <div class="calendar-day inactive">19</div>
-                                <div class="calendar-day inactive">20</div>
-                            </div>
-                            <div class="calendar-row">
-                                <div class="calendar-day available">21</div>
-                                <div class="calendar-day available">22</div>
-                                <div class="calendar-day available">23</div>
-                                <div class="calendar-day available">24</div>
-                                <div class="calendar-day available">25</div>
-                                <div class="calendar-day inactive">26</div>
-                                <div class="calendar-day inactive">27</div>
-                            </div>
-                            <div class="calendar-row">
-                                <div class="calendar-day available">28</div>
-                                <div class="calendar-day available">29</div>
-                                <div class="calendar-day available">30</div>
-                                <div class="calendar-day inactive"></div>
-                                <div class="calendar-day inactive"></div>
-                                <div class="calendar-day inactive"></div>
-                                <div class="calendar-day inactive"></div>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="month-label">SEPT</div>
+                        <table style="width: 100%; text-align: center; border-collapse: collapse; font-size: 15px;">
+                            <thead>
+                                <tr style="color: #b0b8d4;">
+                                    <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+                                </tr>
+                            </thead>
+                            <tbody style="color: #222;">
+                                <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                                <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                                <tr><td>14</td><td>15</td><td style="color:#2563eb; font-weight:600;">16</td><td style="background: #2563eb; color: #fff; border-radius: 50%; font-weight: 700;">17</td><td>18</td><td>19</td><td>20</td></tr>
+                                <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+                                <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <!-- Right Column - Time Slots -->
-                    <div class="right-column">
-                        <h2>Choose the schedule</h2>
-                        <p class="timezone-note">(Visa center timezone)</p>
-                        <div class="time-slots-container">
-                            <div class="time-row">
-                                <div class="time-slot selected">09:15</div>
-                                <div class="time-slot">09:30</div>
-                                <div class="time-slot">09:45</div>
-                                <div class="time-slot">10:15</div>
-                            </div>
-                            <div class="time-row">
-                                <div class="time-slot">10:45</div>
-                                <div class="time-slot">11:15</div>
-                                <div class="time-slot">11:45</div>
-                                <div class="time-slot">12:15</div>
-                            </div>
-                            <div class="time-row">
-                                <div class="time-slot">12:30</div>
-                                <div class="time-slot">12:45</div>
-                                <div class="time-slot">13:00</div>
-                                <div class="time-slot">13:15</div>
-                            </div>
-                            <div class="time-row">
-                                <div class="time-slot">13:30</div>
-                                <div class="time-slot">13:45</div>
-                                <div class="time-slot"></div>
-                                <div class="time-slot"></div>
-                            </div>
-                        </div>
+                    <div style="color: #b0b8d4; font-size: 13px; font-weight: 500; margin-top: 2px;">SEPT</div>
+                </div>
+                <!-- Schedule Card -->
+                <div style="flex: 1; min-width: 320px;">
+                    <h2 style="color: #2563eb; font-size: 22px; font-weight: 700; margin-bottom: 8px;">Choose the schedule</h2>
+                    <div style="color: #222; font-size: 15px; margin-bottom: 18px;">(Visa center timezone)</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px 16px;">
+                        <button class="schedule-btn selected" style="background: #2563eb; color: #fff; font-weight: 600;">09:15</button>
+                        <button class="schedule-btn">09:30</button>
+                        <button class="schedule-btn">09:45</button>
+                        <button class="schedule-btn">10:15</button>
+                        <button class="schedule-btn">10:45</button>
+                        <button class="schedule-btn">11:15</button>
+                        <button class="schedule-btn">11:45</button>
+                        <button class="schedule-btn">12:15</button>
+                        <button class="schedule-btn">12:30</button>
+                        <button class="schedule-btn">12:45</button>
+                        <button class="schedule-btn">13:00</button>
+                        <button class="schedule-btn">13:15</button>
+                        <button class="schedule-btn">13:30</button>
+                        <button class="schedule-btn">13:45</button>
                     </div>
                 </div>
             </div>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin: 32px 0 0 0;">
-            <button class="nav-btn" style="border: 1.5px solid #2563eb; background: #fff; color: #2563eb; font-weight: 600; border-radius: 8px; padding: 12px 24px; font-size: 16px; cursor: pointer;">&#8592; RETURN TO APPLICANTS INFO</button>
-            <button class="nav-btn" style="background: #2563eb; color: #fff; font-weight: 600; border: none; border-radius: 8px; padding: 12px 32px; font-size: 16px; cursor: pointer;">ADD SERVICES &#8594;</button>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 36px;">
+                <button class="nav-btn" style="border: 1.5px solid #2563eb; background: #fff; color: #2563eb; font-weight: 600; border-radius: 8px; padding: 12px 24px; font-size: 16px; cursor: pointer;">&#8592; RETURN TO APPLICANTS INFO</button>
+                <button class="nav-btn" style="background: #2563eb; color: #fff; font-weight: 600; border: none; border-radius: 8px; padding: 12px 32px; font-size: 16px; cursor: pointer;">ADD SERVICES &#8594;</button>
+            </div>
         </div>
     </main>
 
