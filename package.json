@@ -1,0 +1,11 @@
+{
+  "name": "special-octo-journey",
+  "version": "1.0.0",
+  "description": "Preview HTML with npm run dev",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=almaviva_interface.html"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

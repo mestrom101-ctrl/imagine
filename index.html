@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almaviva - Visa Booking</title>
+    <style>
+        /* Make dropdown arrow white for user button only */
+        .user-btn .dropdown-arrow {
+            border-top: 4px solid #fff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+
+        .header {
+            background: #F5F5F5;
+            padding: 12px 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: #3A5AC5;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-item {
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-item:hover {
+            color: #333;
+        }
+
+        .dropdown-arrow {
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid #666;
+        }
+
+        .user-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .flag {
+            width: 24px;
+            height: 18px;
+            background: linear-gradient(to right, #fff 33%, #00b04f 33%, #00b04f 66%, #ff0000 66%);
+            border: 1px solid #ddd;
+        }
+
+        .user-btn {
+            background: #3A5AC5;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .user-icon {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #3A5AC5;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        .timer-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .timer-text {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .progress-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .step.completed {
+            background: #3A5AC5;
+            color: white;
+        }
+
+        .step.current {
+            background: #e8f1ff;
+            color: #3A5AC5;
+            border: 2px solid #3A5AC5;
+        }
+
+        .step.pending {
+            background: #f0f0f0;
+            color: #999;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 2px;
+            background: #ddd;
+        }
+
+        .step.completed:not(:last-child)::after {
+            background: #3A5AC5;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 8px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        .form-title {
+            color: #3A5AC5;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .form-description {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #3A5AC5;
+        }
+
+        .verify-btn {
+            background: #3A5AC5;
+            color: white;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        .verify-btn:hover {
+            background: #2e4ba3;
+        }
+
+        .error-message {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #dc3545;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .warning-icon {
+            width: 20px;
+            height: 20px;
+            background: #dc3545;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .bottom-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .back-btn {
+            background: white;
+            color: #3A5AC5;
+            border: 2px solid #3A5AC5;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: #f0f8ff;
+        }
+
+        .proceed-btn {
+            background: #b0b8d4;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: not-allowed;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer {
+            background: #202942;
+            color: white;
+            padding: 40px 0 44px 32px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: none;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 70px;
+            justify-content: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 54px;
+            margin-bottom: 20px;
+        }
+        .footer-logo img.badge-img {
+            display: block;
+            height: 44px;
+            width: 120px;
+            object-fit: contain;
+            margin-top: 0.5px;
+            background: #202942;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .badge-link + .badge-link .badge-img {
+            margin-top: 2px;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-section.assistance {
+            min-width: 200px;
+            margin-left: 40px;
+            align-items: flex-start;
+        }
+
+        .footer-section.assistance h3,
+        .footer-section.assistance .footer-links {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-links a {
+            color: #B8C2CC;
+            text-decoration: none;
+            font-size: 14px;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #B8C2CC;
+            text-decoration: underline;
+            text-decoration-color: #B8C2CC;
+        }
+
+        .footer-bottom {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            position: absolute;
+            left: 0;
+            bottom: 24px;
+            z-index: 2;
+            padding-left: 32px;
+        }
+
+        .copyright {
+            color: #B8C2CC;
+            font-size: 16px;
+            text-align: left;
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+    <div class="logo"><img src="logo.png" alt="AlmaviA Logo" style="height:32px;"></div>
+        <nav class="nav">
+            <a href="#" class="nav-item">Home <div class="dropdown-arrow"></div></a>
+            <a href="#" class="nav-item">Procedure</a>
+            <a href="#" class="nav-item">Documents</a>
+            <a href="#" class="nav-item">Additional services <div class="dropdown-arrow"></div></a>
+            <a href="#" class="nav-item">Destination Italy <div class="dropdown-arrow"></div></a>
+            <a href="#" class="nav-item">Assistance</a>
+        </nav>
+        <div class="user-section">
+            <button class="user-btn">
+                ABDELFATTAH SOLIMAN <img src="user-icon.png" alt="User Icon" style="width: 16px; height: 16px; display: block;"> <div class="dropdown-arrow"></div>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content" id="main-page">
+        <div class="timer-section">
+            <div class="timer-text">Remaining time to complete your reservation</div>
+            <div class="timer">12:08</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="step completed">✓</div>
+            <div class="step completed">✓</div>
+            <div class="step current">3</div>
+            <div class="step pending">4</div>
+            <div class="step pending">5</div>
+            <div class="step pending">6</div>
+        </div>
+
+        <div class="form-card">
+            <h2 class="form-title">Record number</h2>
+            <p class="form-description">
+                Fill in the record number (protocollo) provided to you by the Italian authorities in order to book this type of VISA. (example: P-AB/C/D/2027/012345)
+            </p>
+            <input type="text" class="input-field" value="P-RM/H/L/2025/1015473" placeholder="Enter record number">
+            <button class="verify-btn">VERIFY</button>
+            <div class="error-message">
+                <div class="warning-icon">!</div>
+                Protocol not found
+            </div>
+        </div>
+
+        <div class="bottom-buttons">
+            <button class="back-btn">
+                ← BACK
+            </button>
+            <button class="proceed-btn">
+                PROCEED →
+            </button>
+        </div>
+    </main>
+
+    <main class="main-content hidden" id="second-page">
+        <div class="timer-section">
+            <div class="timer-text">Remaining time to complete your reservation</div>
+            <div class="timer" id="timer-second">12:08</div>
+        </div>
+        <div class="progress-bar">
+            <div class="step completed">✓</div>
+            <div class="step completed">✓</div>
+            <div class="step completed">3</div>
+            <div class="step current">4</div>
+            <div class="step pending">5</div>
+            <div class="step pending">6</div>
+        </div>
+        <div class="form-card">
+            <h2 class="form-title">Second Page</h2>
+            <p class="form-description">
+                You have moved to the next step. This is the second page content.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo-light.png" alt="AlmavivA Egypt">
+                <a href="#" class="badge-link"><img src="applestore.png" alt="Download on the App Store" class="badge-img"></a>
+                <a href="#" class="badge-link"><img src="googleplay.png" alt="Get it on Google Play" class="badge-img"></a>
+            </div>
+            <div class="footer-section assistance">
+                <h3>ASSISTANCE</h3>
+                <div class="footer-links">
+                    <a href="#">Privacy & Cookie policy</a>
+                    <a href="#">Terms and conditions</a>
+                    <a href="#">Refund Policy</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 AlmavivA Italia
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Timer countdown functionality
+        let timeLeft = 12 * 60 + 8; // 12:08 in seconds
+        
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            document.querySelector('.timer').textContent = display;
+            document.getElementById('timer-second').textContent = display;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+            }
+        }
+        
+        setInterval(updateTimer, 1000);
+        
+        // Button interactions
+        document.querySelector('.verify-btn').addEventListener('click', function() {
+            // Simulate verification process
+            this.textContent = 'VERIFYING...';
+            this.style.background = '#999';
+            
+            setTimeout(() => {
+                this.textContent = 'VERIFY';
+                this.style.background = '#3A5AC5';
+            }, 2000);
+        });
+        
+        document.querySelector('.back-btn').addEventListener('click', function() {
+            alert('Going back to previous step...');
+        });
+        
+        document.querySelector('.proceed-btn').addEventListener('click', function() {
+            // Only proceed if the button is enabled
+            if (this.style.background === 'rgb(58, 90, 197)' || this.style.background === '#3A5AC5') {
+                document.getElementById('main-page').classList.add('hidden');
+                document.getElementById('second-page').classList.remove('hidden');
+            } else {
+                alert('Please verify the protocol number first.');
+            }
+        });
+        
+        // Input field interaction
+        document.querySelector('.input-field').addEventListener('input', function() {
+            const errorMessage = document.querySelector('.error-message');
+            if (this.value.trim() !== 'P-RM/H/L/2025/1015473') {
+                errorMessage.style.display = 'flex';
+                document.querySelector('.proceed-btn').style.background = '#b0b8d4';
+                document.querySelector('.proceed-btn').style.cursor = 'not-allowed';
+            } else {
+                errorMessage.style.display = 'none';
+                document.querySelector('.proceed-btn').style.background = '#3A5AC5';
+                document.querySelector('.proceed-btn').style.cursor = 'pointer';
+            }
+        });
+    </script>
+</body>
+</html>
