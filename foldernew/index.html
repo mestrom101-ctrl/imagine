@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Almaviva - Visa Booking</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <header class="header">
+  <div class="logo"><img src="/logo.png" alt="AlmaviA Logo" style="height:32px;"></div>
+    <nav class="nav">
+      <a href="#" class="nav-item">Home <div class="dropdown-arrow"></div></a>
+      <a href="#" class="nav-item">Procedure</a>
+      <a href="#" class="nav-item">Documents</a>
+      <a href="#" class="nav-item">Additional services <div class="dropdown-arrow"></div></a>
+      <a href="#" class="nav-item">Destination Italy <div class="dropdown-arrow"></div></a>
+      <a href="#" class="nav-item">Assistance</a>
+    </nav>
+    <div class="user-section">
+      <button class="user-btn">
+        ABDELFATTAH SOLIMAN <img src="/user-icon.png" alt="User Icon" style="width: 16px; height: 16px; display: block;"> <div class="dropdown-arrow"></div>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content" id="main-page">
+    <div class="timer-section">
+      <div class="timer-text">Remaining time to complete your reservation</div>
+      <div class="timer">12:08</div>
+    </div>
+
+    <div class="progress-bar">
+      <div class="step completed">✓</div>
+      <div class="step completed">✓</div>
+      <div class="step current">3</div>
+      <div class="step pending">4</div>
+      <div class="step pending">5</div>
+      <div class="step pending">6</div>
+    </div>
+
+    <div class="form-card">
+      <h2 class="form-title">Record number</h2>
+      <p class="form-description">
+        Fill in the record number (protocollo) provided to you by the Italian authorities in order to book this type of VISA. (example: P-AB/C/D/2027/012345)
+      </p>
+      <input type="text" class="input-field" value="P-RM/H/L/2025/1015473" placeholder="Enter record number">
+      <button class="verify-btn">VERIFY</button>
+      <div class="protocol-message" style="display:none; align-items:center; justify-content:center; gap:8px; margin-top:16px; font-size:14px;">
+        <span class="protocol-icon" style="display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:#28a745; color:white; font-weight:bold; font-size:12px;">✓</span>
+        <span style="color:#28a745; font-weight:600;">Protocol found</span>
+      </div>
+    </div>
+
+    <div class="bottom-buttons">
+      <button class="back-btn">
+        ← BACK
+      </button>
+      <button class="proceed-btn">
+        PROCEED →
+      </button>
+    </div>
+  </main>
+
+  <!-- Second page markup moved to second-page.html for modularity. -->
+  <div id="second-page-container"></div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="/logo-light.png" alt="AlmavivA Egypt" style="margin-left: 16px;">
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0; margin-left: 16px;">
+            <a href="#" class="badge-link" style="margin-bottom: 0;"><img src="/applestore.png" alt="Download on the App Store" class="badge-img" style="margin-bottom: 0;"></a>
+            <a href="#" class="badge-link" style="margin-top: 0;"><img src="/googleplay.png" alt="Get it on Google Play" class="badge-img" style="margin-top: 0;"></a>
+          </div>
+      </div>
+      <div class="footer-section assistance">
+        <h3 style="margin-left: 8px;">ASSISTANCE</h3>
+        <div class="footer-links" style="margin-left: 8px;">
+          <a href="#">Privacy & Cookie policy</a>
+          <a href="#">Terms and conditions</a>
+          <a href="#">Refund Policy</a>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">
+        © 2025 AlmavivA Italia
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
