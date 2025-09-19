@@ -34,6 +34,7 @@ if (verifyBtn) {
       if (proceedBtn) {
         proceedBtn.style.background = '#3A5AC5';
         proceedBtn.style.cursor = 'pointer';
+        proceedBtn.classList.add('enabled');
       }
       // Show protocol found message
       if (protocolMsg) protocolMsg.style.display = 'flex';
@@ -87,6 +88,7 @@ if (inputField) {
       if (proceedBtn) {
         proceedBtn.style.background = '#b0b8d4';
         proceedBtn.style.cursor = 'not-allowed';
+        proceedBtn.classList.remove('enabled');
       }
     } else {
       if (protocolMsg) protocolMsg.style.display = 'none';

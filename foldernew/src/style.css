@@ -1,3 +1,21 @@
+.proceed-btn.enabled .proceed-arrow path {
+  stroke: #fff !important;
+}
+/* Calendar navigation SVG arrows */
+.calendar-nav {
+  vertical-align: middle;
+  margin: 0 8px;
+  transition: background 0.18s;
+  border-radius: 50%;
+}
+.calendar-nav:hover {
+  background: #eaf1ff;
+}
+
+/* Lighter font for nav-btns */
+.nav-btn {
+  font-weight: 400 !important;
+}
 /* Calendar Card Styles for Choose the Day */
 .calendar-card {
   background: #fff;
