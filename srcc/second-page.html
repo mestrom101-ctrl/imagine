@@ -1,27 +1,26 @@
 <!-- second-page.html: Contains the markup for the second step (calendar and schedule selection) -->
-<main class="main-content hidden" id="second-page">
-    <div class="timer-section">
-        <div class="timer-text">Remaining time to complete your reservation</div>
-        <div class="timer">12:08</div>
-    </div>
-    <div class="progress-bar" style="margin: 0 0 32px 0;">
-        <div class="step completed">✓</div>
-        <div class="step completed">✓</div>
-        <div class="step completed">✓</div>
+<main class="main-content" id="second-page">
+    <div class="progress-bar" style="margin: 0 auto 32px auto;">
+        <div class="step completed"><i class="fas fa-check"></i></div>
+        <div class="step completed"><i class="fas fa-check"></i></div>
+        <div class="step completed"><i class="fas fa-check"></i></div>
         <div class="step current">4</div>
         <div class="step pending">5</div>
         <div class="step pending">6</div>
     </div>
-    <div class="form-card" style="padding: 36px 32px 32px 32px; margin-bottom: 0;">
+    <div class="form-card" style="padding: 36px 32px 32px 32px; margin-bottom: 0; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
         <div style="display: flex; flex-direction: row; gap: 56px; align-items: flex-start;">
             <!-- Calendar Card -->
             <div style="flex: 1; min-width: 320px;">
                 <h2 style="color: #2563eb; font-size: 22px; font-weight: 700; margin-bottom: 6px;">Choose the day</h2>
                 <div style="color: #4b5563; margin-bottom: 16px; font-size: 15px;">You are seeing the availability based on the chosen day</div>
-                <div style="background: #fff; border-radius: 14px; box-shadow: 0 2px 8px rgba(42,78,255,0.07); padding: 16px 16px 8px 16px; width: 100%; max-width: 320px; margin-bottom: 8px; border: 1px solid #e5e7eb;">
+                <div style="background: #fff; border-radius: 14px; padding: 16px 16px 8px 16px; width: 100%; max-width: 320px; margin-bottom: 8px;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-                        <span style="font-weight: 600; color: #222; font-size: 15px;">SEPT 2025</span>
-                        <span style="font-size: 20px; color: #b0b8d4; cursor: pointer; font-weight: 700;">&#8250;</span>
+                        <span style="font-weight: 600; color: #222; font-size: 15px;">SEPT 2025 <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 4px;"></i></span>
+                        <div>
+                            <span style="font-size: 16px; color: #b0b8d4; cursor: pointer; font-weight: 700; margin-right: 16px;">&lt;</span>
+                            <span style="font-size: 16px; color: #b0b8d4; cursor: pointer; font-weight: 700;">&gt;</span>
+                        </div>
                     </div>
                     <table style="width: 100%; text-align: center; border-collapse: collapse; font-size: 15px;">
                         <thead>
@@ -32,7 +31,7 @@
                         <tbody style="color: #222;">
                             <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
                             <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
-                            <tr><td>14</td><td>15</td><td style="color:#2563eb; font-weight:600;">16</td><td style="background: #2563eb; color: #fff; border-radius: 50%; font-weight: 700;">17</td><td>18</td><td>19</td><td>20</td></tr>
+                            <tr><td>14</td><td>15</td><td style="border: 1px solid #2563eb; border-radius: 50%;">16</td><td style="background: #2563eb; color: #fff; border-radius: 50%; font-weight: 700;">17</td><td>18</td><td>19</td><td>20</td></tr>
                             <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
                             <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
                         </tbody>
@@ -63,8 +62,8 @@
             </div>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px;">
-            <button class="nav-btn" style="border: 1.5px solid #2563eb; background: #fff; color: #2563eb; font-weight: 600; border-radius: 8px; padding: 12px 32px; font-size: 16px; cursor: pointer; min-width: 260px;">&#8592; RETURN TO APPLICANTS INFO</button>
-            <button class="nav-btn" style="background: #2563eb; color: #fff; font-weight: 600; border: none; border-radius: 8px; padding: 12px 40px; font-size: 16px; cursor: pointer; min-width: 260px;">ADD SERVICES &#8594;</button>
+            <button class="nav-btn" style="border: 1.5px solid #2563eb; background: #fff; color: #2563eb; font-weight: 600; border-radius: 8px; padding: 12px 24px; font-size: 16px; cursor: pointer; min-width: 260px;">&lt; RETURN TO APPLICANTS INFO</button>
+            <button class="nav-btn" style="background: #2563eb; color: #fff; font-weight: 600; border: none; border-radius: 8px; padding: 12px 32px; font-size: 16px; cursor: pointer; min-width: 260px;">ADD SERVICES &gt;</button>
         </div>
     </div>
 </main>

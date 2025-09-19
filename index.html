@@ -747,6 +747,10 @@
                         .then(response => response.text())
                         .then(html => {
                             document.getElementById('second-page-container').innerHTML = html;
+                            const secondPage = document.getElementById('second-page');
+                            if (secondPage) {
+                                secondPage.classList.remove('hidden');
+                            }
                             // Optionally, scroll to top
                             window.scrollTo(0, 0);
                         });
