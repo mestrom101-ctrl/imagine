@@ -15,7 +15,40 @@ function updateTimer() {
 }
 setInterval(updateTimer, 1000);
 
-// Button interactions for main page only
+
+// List of valid protocol values
+const validProtocols = [
+  'P-RM/H/L/2025/1015487',
+  'P-RM/H/L/2025/1015488',
+  'P-RM/H/L/2025/1015489',
+  'P-RM/H/L/2025/1015490',
+  'P-RM/H/L/2025/1015491',
+  'P-RM/H/L/2025/1015492',
+  'P-RM/H/L/2025/1015493',
+  'P-RM/H/L/2025/1015494',
+  'P-RM/H/L/2025/1015495',
+  'P-RM/H/L/2025/1015496',
+  'P-RM/H/L/2025/1015497',
+  // Add more valid protocol numbers here
+];
+
+function showProtocolMessage(found: boolean) {
+  const protocolMsg = document.querySelector<HTMLElement>('.protocol-message');
+  if (!protocolMsg) return;
+  protocolMsg.style.display = 'flex';
+  if (found) {
+    protocolMsg.innerHTML = `
+      <span class="protocol-icon" style="display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:#28a745; color:white; font-weight:bold; font-size:12px;">✓</span>
+      <span style="color:#28a745; font-weight:600;">Protocol found</span>
+    `;
+  } else {
+    protocolMsg.innerHTML = `
+      <span class="protocol-icon" style="display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:#dc3545; color:white; font-weight:bold; font-size:12px;">!</span>
+      <span style="color:#dc3545; font-weight:600;">Protocol not found</span>
+    `;
+  }
+}
+
 const verifyBtn = document.querySelector<HTMLButtonElement>('.verify-btn');
 if (verifyBtn) {
   verifyBtn.addEventListener('click', function () {
@@ -29,15 +62,23 @@ if (verifyBtn) {
       verifyBtn.textContent = 'VERIFY';
       verifyBtn.style.background = '#3A5AC5';
       verifyBtn.disabled = false;
-      // Enable proceed button after verification
+      const inputField = document.querySelector<HTMLInputElement>('.input-field');
+      const value = inputField ? inputField.value.trim() : '';
+      const found = validProtocols.includes(value);
+      showProtocolMessage(found);
+      // Enable or disable proceed button after verification
       const proceedBtn = document.querySelector<HTMLButtonElement>('.proceed-btn');
       if (proceedBtn) {
-        proceedBtn.style.background = '#3A5AC5';
-        proceedBtn.style.cursor = 'pointer';
-        proceedBtn.classList.add('enabled');
+        if (found) {
+          proceedBtn.style.background = '#3A5AC5';
+          proceedBtn.style.cursor = 'pointer';
+          proceedBtn.classList.add('enabled');
+        } else {
+          proceedBtn.style.background = '#b0b8d4';
+          proceedBtn.style.cursor = 'not-allowed';
+          proceedBtn.classList.remove('enabled');
+        }
       }
-      // Show protocol found message
-      if (protocolMsg) protocolMsg.style.display = 'flex';
     }, 2000);
   });
 }
