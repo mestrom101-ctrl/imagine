@@ -99,16 +99,16 @@
 .schedule-btn {
   background: #eaf1ff;
   color: #2563eb;
-  border: none;
+  border: #26375b;
   border-radius: 16px;
   padding: 4px 1px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
   transition: background 0.18s, color 0.18s;
   outline: none;
-  margin-bottom: 0px;
-  margin-right: 0px;
+  margin-bottom: 1px;
+  margin-right: 1px;
   box-shadow: none;
   min-width: 40px;
 }
