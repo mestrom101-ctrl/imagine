@@ -101,14 +101,14 @@
   color: #2563eb;
   border: none;
   border-radius: 16px;
-  padding: 4px 6px;
+  padding: 3px 4px;
   font-size: 15px;
   font-weight: 400;
   cursor: pointer;
   transition: background 0.18s, color 0.18s;
   outline: none;
-  margin-bottom: 1px;
-  margin-right: 1px;
+  margin-bottom: 0px;
+  margin-right: 0px;
   box-shadow: none;
   min-width: 56px;
 }

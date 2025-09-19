@@ -13,20 +13,20 @@
         <div class="step pending">6</div>
     </div>
     <div class="form-card" style="padding: 36px 32px 32px 32px; margin-bottom: 0;">
-        <div style="display: flex; flex-direction: row; gap: 56px; align-items: flex-start;">
+        <div class="day-schedule-container" style="display: flex; flex-direction: row; gap: 56px; align-items: flex-start;">
             <!-- Calendar Card -->
             <div style="flex: 1; min-width: 320px;">
                 <h2 style="color: #2563eb; font-size: 22px; font-weight: 700; margin-bottom: 6px;">Choose the day</h2>
                 <div style="color: #4b5563; margin-bottom: 16px; font-size: 15px;">You are seeing the availability based on the chosen day</div>
                 <div class="calendar-card">
                     <div class="calendar-header">
-                                                <svg class="calendar-nav calendar-nav-left" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor:pointer;">
-                                                    <path d="M16 4L8 12L16 20" stroke="#6B8DD6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                                <span class="calendar-month">SEPT 2025</span>
-                                                <svg class="calendar-nav calendar-nav-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor:pointer;">
-                                                    <path d="M8 4L16 12L8 20" stroke="#6B8DD6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
+                        <svg class="calendar-nav calendar-nav-left" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor:pointer;">
+                            <path d="M16 4L8 12L16 20" stroke="#6B8DD6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="calendar-month">SEPT 2025</span>
+                        <svg class="calendar-nav calendar-nav-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor:pointer;">
+                            <path d="M8 4L16 12L8 20" stroke="#6B8DD6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                     <table>
                         <thead>
@@ -49,7 +49,7 @@
             <div style="flex: 1; min-width: 320px;">
                 <h2 style="color: #2563eb; font-size: 22px; font-weight: 700; margin-bottom: 6px;">Choose the schedule</h2>
                 <div style="color: #222; font-size: 15px; margin-bottom: 16px;">(Visa center timezone)</div>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 16px; max-width: 370px;">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px 6px; max-width: 370px;">
                     <button class="schedule-btn selected">09:15</button>
                     <button class="schedule-btn">09:30</button>
                     <button class="schedule-btn">09:45</button>
@@ -69,15 +69,16 @@
         </div>
     </div>
 
-    <!-- Navigation buttons outside the container -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px;">
-            <button class="nav-btn" style="display: flex; align-items: center; gap: 8px; border: 1.5px solid #2563eb; background: #fff; color: #2563eb; font-weight: 400; border-radius: 8px; padding: 12px 32px; font-size: 16px; cursor: pointer; min-width: 260px;">
-                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 2L7.5 8L13.5 14" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>RETURN TO APPLICANTS INFO</span>
-            </button>
-            <button class="nav-btn" style="display: flex; align-items: center; gap: 8px; background: #2563eb; color: #fff; font-weight: 400; border: none; border-radius: 8px; padding: 12px 40px; font-size: 16px; cursor: pointer; min-width: 260px;">
-                <span>ADD SERVICES</span>
-                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 14L12.5 8L6.5 2" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-    </div>
+        <!-- Navigation buttons outside the container -->
+</main>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; max-width: 735px; margin-left: auto; margin-right: auto;">
+    <button class="nav-btn" style="display: flex; align-items: center; gap: 8px; border: 1.5px solid #2563eb; background: #fff; color: #2563eb; font-weight: 400; border-radius: 8px; padding: 12px 32px; font-size: 16px; cursor: pointer; min-width: 260px;">
+        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 2L7.5 8L13.5 14" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>RETURN TO APPLICANTS INFO</span>
+    </button>
+    <button class="nav-btn" style="display: flex; align-items: center; gap: 8px; background: #2563eb; color: #fff; font-weight: 400; border: none; border-radius: 8px; padding: 12px 40px; font-size: 16px; cursor: pointer; min-width: 260px;">
+        <span>ADD SERVICES</span>
+        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 14L12.5 8L6.5 2" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+</div>
 </main>
