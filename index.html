@@ -130,24 +130,21 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             margin: 40px auto;
-            padding: 0 20px;
             gap: 0;
             position: relative;
         }
 
         .step {
-            width: 24px;
-            height: 24px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             position: relative;
-            font-size: 12px;
-            z-index: 1;
         }
 
         .step.completed {
@@ -158,7 +155,7 @@
         .step.current {
             background: #e8f1ff;
             color: #3A5AC5;
-            border: 1px solid #3A5AC5;
+            border: 2px solid #3A5AC5;
         }
 
         .step.pending {
@@ -166,28 +163,21 @@
             color: #999;
         }
 
-        .step:not(:first-child)::before {
+        .step:not(:last-child)::after {
             content: '';
             position: absolute;
-            right: 100%;
+            left: 100%;
             top: 50%;
             transform: translateY(-50%);
-            width: calc((800px - 40px - 6 * 24px) / 5);
+            width: calc((900px - 6 * 40px) / 5);
+            max-width: calc((100% - 6 * 40px) / 5);
             height: 2px;
             background: #ddd;
             z-index: 0;
         }
 
-        .step.completed::before, .step.current::before {
-            background: #3A5AC5;
-        }
-        
-        .step:not(:last-child)::after {
-            display: none;
-        }
-        
         .step.completed:not(:last-child)::after {
-            display: none;
+            background: #3A5AC5;
         }
 
         .form-card {
@@ -204,9 +194,33 @@
             font-weight: bold;
             margin-bottom: 24px;
         }
+
         .form-description {
-            font-size: 16px;
-        }
+        /* ...existing code... */
+/* Schedule button styles (global, not nested) */
+.schedule-btn {
+    background: #eaf0ff;
+    color: #2946a6;
+    border: none;
+    border-radius: 24px;
+    padding: 8px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.schedule-btn.selected,
+.schedule-btn:active {
+    background: #2563eb;
+    color: #464ac4;
+}
+.schedule-btn:hover:not(.selected) {
+    background: #16409c;
+}
+
+        /* Navigation button styles */
         .nav-btn {
             font-size: 16px;
             font-weight: 600;
