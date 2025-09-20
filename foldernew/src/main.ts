@@ -1,4 +1,3 @@
-
 import './style.css';
 
 // Timer countdown functionality
@@ -181,3 +180,21 @@ function initSecondPageInteractivity() {
     });
   }
 }
+
+// Add this after your DOMContentLoaded or main event handler
+document.addEventListener('click', (event) => {
+  const target = event.target as HTMLElement;
+  // Check if the clicked element or its parent is the RETURN TO APPLICANTS INFO button
+  if (
+    target.closest('.nav-btn') &&
+    target.textContent?.includes('RETURN TO APPLICANTS INFO')
+  ) {
+    // Hide second page and show main page
+    const secondPage = document.getElementById('second-page');
+    const mainPage = document.getElementById('main-page');
+    if (secondPage) secondPage.classList.add('hidden');
+    if (mainPage) mainPage.classList.remove('hidden');
+    // Optionally scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
