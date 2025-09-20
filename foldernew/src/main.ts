@@ -181,20 +181,27 @@ function initSecondPageInteractivity() {
   }
 }
 
-// Add this after your DOMContentLoaded or main event handler
-document.addEventListener('click', (event) => {
-  const target = event.target as HTMLElement;
-  // Check if the clicked element or its parent is the RETURN TO APPLICANTS INFO button
-  if (
-    target.closest('.nav-btn') &&
-    target.textContent?.includes('RETURN TO APPLICANTS INFO')
-  ) {
-    // Hide second page and show main page
-    const secondPage = document.getElementById('second-page');
-    const mainPage = document.getElementById('main-page');
-    if (secondPage) secondPage.classList.add('hidden');
-    if (mainPage) mainPage.classList.remove('hidden');
-    // Optionally scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+// Ensure this runs after the DOM is loaded and after second-page is loaded dynamically
+function setupReturnToApplicantsInfo() {
+  const returnBtn = document.querySelector('.nav-btn span');
+  if (returnBtn && returnBtn.textContent?.includes('TORNA ALLE INFORMAZIONI DEL RICHIEDENTE')) {
+    const btn = returnBtn.parentElement as HTMLButtonElement;
+    btn.addEventListener('click', () => {
+      // Hide second page, show main page
+      const secondPage = document.getElementById('second-page');
+      const mainPage = document.getElementById('main-page');
+      if (secondPage) secondPage.classList.add('hidden');
+      if (mainPage) mainPage.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
-});
+}
+
+// Call this function after loading the second page dynamically
+// Example:
+fetch('/second-page.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('second-page-container')!.innerHTML = html;
+    setupReturnToApplicantsInfo();
+  });
